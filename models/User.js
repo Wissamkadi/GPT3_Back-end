@@ -1,4 +1,3 @@
-const { image } = require("framer-motion/client")
 const mongoose = require("mongoose")
 
 // Creating user schema

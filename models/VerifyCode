@@ -1,0 +1,9 @@
+const mongoose = require("mongoose");
+
+const ResetCodeSchema = new mongoose.Schema({
+  email: { type: String, required: true },
+  code: { type: String, required: true },
+  time: { type: Date, required: true }
+});
+
+module.exports = mongoose.model("ResetCode", ResetCodeSchema);

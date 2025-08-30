@@ -6,8 +6,6 @@ const User = require("./models/User")
 const ResetCode = require("./models/VerifyCode");
 const nodemailer = require("nodemailer");
 const { OAuth2Client } = require("google-auth-library");
-const { picture } = require("framer-motion/client");
-const { errorMonitor } = require("nodemailer/lib/xoauth2");
 
  const app = express() 
  app.use(express.json())

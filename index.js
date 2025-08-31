@@ -69,18 +69,12 @@ const client = new OAuth2Client("871509423731-01v4id2gj98a5pjafcb3pau0rl087c0j.a
       });
 
       let user = await User.findOne({email : payload.email})
-    if (!user) {
-      // Create new user
+     if(!user){
       user = new User({
-        name: payload.name,
-        email: payload.email,
-        picture: payload.picture,
-      });
-    } else {
-      // ✅ Update existing user's info each login
-      user.name = payload.name;
-      user.picture = payload.picture;
-    }
+       name : payload.name, 
+       email : payload.email,
+       picture : payload.picture,
+       // password : "" })
          await user.save()
       }
       res.json({message : "Login successful",        

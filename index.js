@@ -209,16 +209,20 @@ app.post("/signin", async (req,res) => {
      }
    })
 
-   mongoose.connect("mongodb://localhost:27017/GPT-3",{
-      serverSelectionTimeoutMS : 5000
-   })
-   .then(() => {
-      console.log("Connected to MongoDB...")
-      app.listen(5000,()=>{
-      console.log("the server is starting")
-      })
-   }).catch((err) => {
-      console.log(err)
-   })
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  serverSelectionTimeoutMS: 5000
+})
+.then(() => {
+  console.log("Connected to MongoDB Atlas...");
+  app.listen(process.env.PORT || 5000, () => {
+    console.log(`Server running on port ${process.env.PORT || 5000}`);
+  });
+})
+.catch((err) => {
+  console.error("MongoDB connection error:", err);
+});
+
 
 

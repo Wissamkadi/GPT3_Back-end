@@ -9,7 +9,7 @@ const { OAuth2Client } = require("google-auth-library");
 
  const app = express() 
  app.use(express.json())
-app.use(cors({ origin: "https://gpt3-tool.netlify.app/" }));
+app.use(cors({ origin: "https://gpt3-tool.netlify.app" }));
 
 const client = new OAuth2Client("871509423731-01v4id2gj98a5pjafcb3pau0rl087c0j.apps.googleusercontent.com");
 

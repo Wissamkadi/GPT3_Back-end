@@ -12,7 +12,7 @@ const { OAuth2Client } = require("google-auth-library");
 app.use(cors({
   origin: [
     "http://localhost:5173",          // local dev
-    "https://gpt3-tool.netlify.app",  // deployed frontend 
+    "https://gpt3-tool1.netlify.app",  // deployed frontend 
   ],
   credentials: true
 }));
